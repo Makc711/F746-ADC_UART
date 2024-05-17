@@ -9,7 +9,11 @@
 #include <algorithm>
 
 memory::memory(const sector_addr start_addr) :
+#if USE_FLASH
   flash_rw(),
+#else
+  eeprom_rw(),
+#endif
   f_start_addr(static_cast<uint32_t>(start_addr)) {}
 
 memory::status memory::read_data(data_t& full_data) const

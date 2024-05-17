@@ -7,6 +7,7 @@
 
 #include "flash_rw.h"
 
+#if defined(STM32F746xx)
 /**
   * @brief  Gets the sector of a given address
   * @param  address - destination address
@@ -54,11 +55,13 @@ uint32_t flash_rw::get_sector(const uint32_t address)
 #endif
   return sector;
 }
+#endif
 
 uint32_t flash_rw::erase_sector(const uint32_t address_start, const uint32_t address_end)
 {
   HAL_FLASH_Unlock();
 
+#if defined(STM32F746xx)
   const uint32_t first_sector = get_sector(address_start);
   const uint32_t nb_of_sectors = get_sector(address_end) - first_sector + 1;
 
@@ -67,6 +70,14 @@ uint32_t flash_rw::erase_sector(const uint32_t address_start, const uint32_t add
   erase_init_struct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
   erase_init_struct.Sector        = first_sector;
   erase_init_struct.NbSectors     = nb_of_sectors;
+
+#elif defined(STM32L152xC)
+  FLASH_EraseInitTypeDef erase_init_struct;
+  erase_init_struct.TypeErase   = FLASH_TYPEERASE_PAGES;
+  erase_init_struct.PageAddress = address_start;
+  erase_init_struct.NbPages     = (address_end - address_start) / FLASH_PAGE_SIZE
+    + ((((address_end - address_start) % FLASH_PAGE_SIZE) > 0) ? 1 : 0);
+#endif
 
   /* Note: If an erase operation in Flash memory also concerns data in the data or instruction cache,
      you have to make sure that these data are rewritten before they are accessed during code
@@ -89,8 +100,10 @@ uint32_t flash_rw::erase_sector(const uint32_t address_start, const uint32_t add
   return index_of_sector_error;
 }
 
+#if defined(STM32F746xx)
 void flash_rw::write_byte(const uint32_t address, const uint8_t byte)
 {
+
   if (const HAL_StatusTypeDef status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE, address, byte); 
       status != HAL_OK) 
   {
@@ -99,10 +112,11 @@ void flash_rw::write_byte(const uint32_t address, const uint8_t byte)
     Error_Handler();
   }
 }
+#endif
 
 uint8_t flash_rw::read_byte(const uint32_t address)
 {
-  return *reinterpret_cast<__IO uint8_t*>(address);
+  return *reinterpret_cast<__IO uint8_t*>(address);  // NOLINT(performance-no-int-to-ptr)
 }
 
 void flash_rw::check_byte(const uint32_t address, const uint8_t byte)
@@ -113,14 +127,38 @@ void flash_rw::check_byte(const uint32_t address, const uint8_t byte)
   }
 }
 
+inline void flash_rw::write_word(const uint32_t address, const uint32_t word)
+{
+  if (const HAL_StatusTypeDef status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address, word); 
+      status != HAL_OK) 
+  {
+    /* Error occurred while writing data in Flash memory.
+       User can add here some code to deal with this error */
+    Error_Handler();
+  }
+}
+
+uint32_t flash_rw::read_word(const uint32_t address)
+{
+  return *reinterpret_cast<__IO uint32_t*>(address);  // NOLINT(performance-no-int-to-ptr)
+}
+
+void flash_rw::check_word(const uint32_t address, const uint32_t word)
+{
+  if (read_word(address) != word)
+  {
+    Error_Handler();
+  }
+}
+
 void flash_rw::write_arr_to_flash(const uint32_t address, const uint8_t* arr, const size_t size)
 {
   HAL_FLASH_Unlock();
 
-  for (size_t i = 0; i < size; ++i)
+  for (size_t i = 0; i < size; i += 4)
   {
-    write_byte(address + i, arr[i]);
-    check_byte(address + i, arr[i]);
+    write_word(address + i, arr[i]);
+    check_word(address + i, arr[i]);
   }
 
   HAL_FLASH_Lock();
@@ -134,6 +172,7 @@ void flash_rw::read_arr_from_flash(const uint32_t address, uint8_t* arr, const s
   }
 }
 
+#if defined(STM32F746xx)
 void flash_rw::write_str_to_flash(const uint32_t address, const char* str)
 {
   HAL_FLASH_Unlock();
@@ -157,5 +196,5 @@ size_t flash_rw::read_str_from_flash(const uint32_t address, char* str, const si
   } while ((str[length] != '\0') && (length++ < max_length));
   return length;
 }
-
+#endif
 

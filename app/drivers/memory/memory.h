@@ -13,7 +13,12 @@
 
 #pragma once
 
+#include "main.h"
+#if USE_FLASH
 #include "flash_rw.h"
+#else
+#include "eeprom_rw.h"
+#endif
 
 struct data_t
 {
@@ -37,7 +42,11 @@ constexpr data_t k_default_val[] = {
 };
 constexpr auto k_default_val_length = sizeof(k_default_val) / sizeof(data_t);
 
+#if USE_FLASH
 class memory : public flash_rw
+#else
+class memory : public eeprom_rw
+#endif
 {
 public:
   enum class status
