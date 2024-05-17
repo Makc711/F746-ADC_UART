@@ -43,7 +43,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
       <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
-      <AdditionalIncludeDirectories>..\Core\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy;..\Drivers\CMSIS\Device\ST\STM32F7xx\Include;..\Drivers\CMSIS\Include;..\app;..\app\adc;..\app\xprintf;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Core\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy;..\Drivers\CMSIS\Device\ST\STM32F7xx\Include;..\Drivers\CMSIS\Include;..\app;..\app\drivers\xprintf;..\app\hardware\adc;..\app\hardware\flash;..\app\drivers\memory;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>DEBUG=1;USE_HAL_DRIVER;STM32F746xx;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard />
@@ -59,7 +59,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ClCompile>
       <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
-      <AdditionalIncludeDirectories>..\Core\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy;..\Drivers\CMSIS\Device\ST\STM32F7xx\Include;..\Drivers\CMSIS\Include;..\app;..\app\adc;..\app\xprintf;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Core\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc;..\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy;..\Drivers\CMSIS\Device\ST\STM32F7xx\Include;..\Drivers\CMSIS\Include;..\app;..\app\drivers\xprintf;..\app\hardware\adc;..\app\hardware\flash;..\app\drivers\memory;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG=1;RELEASE=1;USE_HAL_DRIVER;STM32F746xx;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard />
@@ -170,13 +170,17 @@
     <ClCompile Include="..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_adc.c" />
     <ClCompile Include="..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_adc_ex.c" />
     <ClCompile Include="..\Core\Src\main.cpp" />
-    <ClCompile Include="..\app\xprintf\xprintf.c" />
-    <ClInclude Include="..\app\xprintf\xprintf.h" />
-    <ClCompile Include="..\app\xprintf\xuart_stream.cpp" />
-    <ClInclude Include="..\app\xprintf\xuart_stream.h" />
-    <ClCompile Include="..\app\adc\adc_conv.cpp" />
-    <ClInclude Include="..\app\adc\adc_conv.h" />
-    <ClCompile Include="..\app\adc\median_filter_ekstrom.cpp" />
-    <ClInclude Include="..\app\adc\median_filter_ekstrom.h" />
+    <ClCompile Include="..\app\drivers\xprintf\xprintf.c" />
+    <ClInclude Include="..\app\drivers\xprintf\xprintf.h" />
+    <ClCompile Include="..\app\drivers\xprintf\xuart_stream.cpp" />
+    <ClInclude Include="..\app\drivers\xprintf\xuart_stream.h" />
+    <ClCompile Include="..\app\hardware\adc\adc_conv.cpp" />
+    <ClInclude Include="..\app\hardware\adc\adc_conv.h" />
+    <ClCompile Include="..\app\hardware\adc\median_filter_ekstrom.cpp" />
+    <ClInclude Include="..\app\hardware\adc\median_filter_ekstrom.h" />
+    <ClCompile Include="..\app\hardware\flash\flash_rw.cpp" />
+    <ClInclude Include="..\app\hardware\flash\flash_rw.h" />
+    <ClCompile Include="..\app\drivers\memory\memory.cpp" />
+    <ClInclude Include="..\app\drivers\memory\memory.h" />
   </ItemGroup>
 </Project>

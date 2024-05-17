@@ -115,20 +115,44 @@
     <Filter Include="Source files\app">
       <UniqueIdentifier>{2da37890-a0c1-44d1-b75e-fdc60a994768}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\app\xprintf">
-      <UniqueIdentifier>{6eb901e5-fa25-4dfe-a52e-5aa3c23ff39f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header files\app">
       <UniqueIdentifier>{ba11f2f7-cb2d-47b1-b405-4715443dfca0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header files\app\xprintf">
-      <UniqueIdentifier>{9f720028-348a-4187-bede-fac715e90f1f}</UniqueIdentifier>
+    <Filter Include="Source files\app\drivers">
+      <UniqueIdentifier>{69806e0d-2848-4267-8581-e8a586812d07}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\app\adc">
-      <UniqueIdentifier>{81dc0b48-0a39-488f-ab28-194fb0cf6af7}</UniqueIdentifier>
+    <Filter Include="Source files\app\drivers\xprintf">
+      <UniqueIdentifier>{29d111e3-4c2d-476d-ac45-60ebf38bb66f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header files\app\adc">
-      <UniqueIdentifier>{56995ff8-b4a0-40ae-a120-7bcb3ad3802a}</UniqueIdentifier>
+    <Filter Include="Source files\app\hardware">
+      <UniqueIdentifier>{de241c3d-f566-43f7-8291-8b939d6d5f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\app\hardware\adc">
+      <UniqueIdentifier>{5db06ac2-ae6d-4d1c-bf16-2e3de9e84389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\app\hardware\flash">
+      <UniqueIdentifier>{7e5835ad-1193-465b-a7ff-dd02da1ae4bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\app\drivers">
+      <UniqueIdentifier>{a06efa1d-2215-498c-afe1-5f3d7d277581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\app\drivers\xprintf">
+      <UniqueIdentifier>{37d7a5dd-59b9-4b73-b06d-6b895631ae82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\app\hardware">
+      <UniqueIdentifier>{fc83b2d7-cb97-48a9-97af-2f14f9d9f791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\app\hardware\adc">
+      <UniqueIdentifier>{540c7cc0-df0d-4942-9f78-8904e5f57747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\app\hardware\flash">
+      <UniqueIdentifier>{e806d253-166f-4046-bb29-2b0addbef4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\app\drivers\memory">
+      <UniqueIdentifier>{e1336a9b-91b0-4746-ab2d-c41c44b19ad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\app\drivers\memory">
+      <UniqueIdentifier>{7fbe4929-2358-4e52-b32c-c8e8d4a269e2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -408,29 +432,41 @@
     <ClCompile Include="..\Core\Src\main.cpp">
       <Filter>Source files\Core\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\app\xprintf\xprintf.c">
-      <Filter>Source files\app\xprintf</Filter>
+    <ClCompile Include="..\app\drivers\xprintf\xprintf.c">
+      <Filter>Source files\app\drivers\xprintf</Filter>
     </ClCompile>
-    <ClInclude Include="..\app\xprintf\xprintf.h">
-      <Filter>Source files\app\xprintf</Filter>
+    <ClInclude Include="..\app\drivers\xprintf\xprintf.h">
+      <Filter>Source files\app\drivers\xprintf</Filter>
     </ClInclude>
-    <ClCompile Include="..\app\xprintf\xuart_stream.cpp">
-      <Filter>Source files\app\xprintf</Filter>
+    <ClCompile Include="..\app\drivers\xprintf\xuart_stream.cpp">
+      <Filter>Source files\app\drivers\xprintf</Filter>
     </ClCompile>
-    <ClInclude Include="..\app\xprintf\xuart_stream.h">
-      <Filter>Source files\app\xprintf</Filter>
+    <ClInclude Include="..\app\drivers\xprintf\xuart_stream.h">
+      <Filter>Source files\app\drivers\xprintf</Filter>
     </ClInclude>
-    <ClCompile Include="..\app\adc\adc_conv.cpp">
-      <Filter>Source files\app\adc</Filter>
+    <ClCompile Include="..\app\hardware\adc\adc_conv.cpp">
+      <Filter>Source files\app\hardware\adc</Filter>
     </ClCompile>
-    <ClInclude Include="..\app\adc\adc_conv.h">
-      <Filter>Source files\app\adc</Filter>
+    <ClInclude Include="..\app\hardware\adc\adc_conv.h">
+      <Filter>Source files\app\hardware\adc</Filter>
     </ClInclude>
-    <ClCompile Include="..\app\adc\median_filter_ekstrom.cpp">
-      <Filter>Source files\app\adc</Filter>
+    <ClCompile Include="..\app\hardware\adc\median_filter_ekstrom.cpp">
+      <Filter>Source files\app\hardware\adc</Filter>
     </ClCompile>
-    <ClInclude Include="..\app\adc\median_filter_ekstrom.h">
-      <Filter>Source files\app\adc</Filter>
+    <ClInclude Include="..\app\hardware\adc\median_filter_ekstrom.h">
+      <Filter>Source files\app\hardware\adc</Filter>
+    </ClInclude>
+    <ClCompile Include="..\app\hardware\flash\flash_rw.cpp">
+      <Filter>Source files\app\hardware\flash</Filter>
+    </ClCompile>
+    <ClInclude Include="..\app\hardware\flash\flash_rw.h">
+      <Filter>Source files\app\hardware\flash</Filter>
+    </ClInclude>
+    <ClCompile Include="..\app\drivers\memory\memory.cpp">
+      <Filter>Source files\app\drivers\memory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\app\drivers\memory\memory.h">
+      <Filter>Source files\app\drivers\memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

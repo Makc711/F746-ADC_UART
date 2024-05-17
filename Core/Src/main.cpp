@@ -24,6 +24,7 @@
 #include "xuart_stream.h"
 #include "xprintf.h"
 #include "adc_conv.h"
+#include "memory.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,8 +100,40 @@ int main(void)
   MX_ADC3_Init();
   /* USER CODE BEGIN 2 */
   xuart_stream::get_instance().init(huart1);
-  auto& adc = adc_conv::get_instance();
-  adc.init(hadc3);
+  const auto adc3 = adc_conv(hadc3);
+
+  const memory memory(flash_rw::sector_addr::ADDR_FLASH_SECTOR_7);
+  data_t full_data[k_default_val_length] = {};
+  const memory::status result = memory.read_data(*full_data);
+  xprintf("Memory read status: %s\r", result == memory::status::READ_OK ? "from FLASH" : "DEFAULT");
+
+  uint16_t u_min[adc_conv::channels_num];
+  uint16_t u_max[adc_conv::channels_num];
+  for (auto& [index, value] : full_data)
+  {
+    switch (index)
+    {
+      case data_t::idx::U0_MIN: 
+        u_min[0] = value;
+        break;
+      case data_t::idx::U0_MAX: 
+        u_max[0] = value;
+        break;
+      case data_t::idx::U1_MIN: 
+        u_min[1] = value;
+        break;
+      case data_t::idx::U1_MAX: 
+        u_max[1] = value;
+        break;
+    }
+  }
+
+  uint16_t range[adc_conv::channels_num];
+  for (size_t i = 0; i < adc_conv::channels_num; ++i) 
+  {
+    range[i] = u_max[i] - u_min[i];
+  }
+
   uint16_t adc_data_in_percent[adc_conv::channels_num];
   /* USER CODE END 2 */
 
@@ -110,7 +143,19 @@ int main(void)
   {
     for (size_t i = 0; i < adc_conv::channels_num; ++i)
     {
-      adc_data_in_percent[i] = static_cast<uint16_t>(static_cast<uint32_t>(adc.get_adc_data(i)) * 10000 / 4095);
+      if (const uint16_t adc3_value = adc3.get_adc_data(i); 
+          adc3_value <= u_min[i]) 
+      {
+        adc_data_in_percent[i] = 0;
+      }
+      else if (adc3_value >= u_max[i]) 
+      {
+        adc_data_in_percent[i] = 10000;
+      }
+      else 
+      {
+        adc_data_in_percent[i] = static_cast<uint16_t>(static_cast<uint32_t>(adc3_value - u_min[i]) * 10000 / range[i]);
+      }
     }
     
     xprintf("PF8: %3u.%02u%%; PF9: %3u.%02u%%\r", 

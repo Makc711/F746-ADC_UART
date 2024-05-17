@@ -49,7 +49,7 @@
     <AllDependencies>
       <ProjectDependency>
         <RelativePath>..\.cproject</RelativePath>
-        <Timestamp>133603595353709913</Timestamp>
+        <Timestamp>133603697431381124</Timestamp>
       </ProjectDependency>
     </AllDependencies>
     <RootDirectory>
@@ -517,38 +517,72 @@
           <Name>app</Name>
           <Subdirectories>
             <VirtualDirectorySnapshot>
-              <Name>adc</Name>
-              <Files>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\adc\adc_conv.cpp</RelativePath>
-                </VirtualFileSnapshot>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\adc\adc_conv.h</RelativePath>
-                </VirtualFileSnapshot>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\adc\median_filter_ekstrom.cpp</RelativePath>
-                </VirtualFileSnapshot>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\adc\median_filter_ekstrom.h</RelativePath>
-                </VirtualFileSnapshot>
-              </Files>
+              <Name>drivers</Name>
+              <Subdirectories>
+                <VirtualDirectorySnapshot>
+                  <Name>memory</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\memory\memory.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\memory\memory.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+                <VirtualDirectorySnapshot>
+                  <Name>xprintf</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xprintf.c</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xprintf.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xuart_stream.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xuart_stream.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+              </Subdirectories>
+              <Files />
             </VirtualDirectorySnapshot>
             <VirtualDirectorySnapshot>
-              <Name>xprintf</Name>
-              <Files>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\xprintf\xprintf.c</RelativePath>
-                </VirtualFileSnapshot>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\xprintf\xprintf.h</RelativePath>
-                </VirtualFileSnapshot>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\xprintf\xuart_stream.cpp</RelativePath>
-                </VirtualFileSnapshot>
-                <VirtualFileSnapshot>
-                  <RelativePath>..\app\xprintf\xuart_stream.h</RelativePath>
-                </VirtualFileSnapshot>
-              </Files>
+              <Name>hardware</Name>
+              <Subdirectories>
+                <VirtualDirectorySnapshot>
+                  <Name>adc</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\adc_conv.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\adc_conv.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\median_filter_ekstrom.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\median_filter_ekstrom.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+                <VirtualDirectorySnapshot>
+                  <Name>flash</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\flash\flash_rw.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\flash\flash_rw.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+              </Subdirectories>
+              <Files />
             </VirtualDirectorySnapshot>
           </Subdirectories>
           <Files />
@@ -567,8 +601,10 @@
             <string>..\Drivers\CMSIS\Device\ST\STM32F7xx\Include</string>
             <string>..\Drivers\CMSIS\Include</string>
             <string>..\app</string>
-            <string>..\app\adc</string>
-            <string>..\app\xprintf</string>
+            <string>..\app\drivers\xprintf</string>
+            <string>..\app\hardware\adc</string>
+            <string>..\app\hardware\flash</string>
+            <string>..\app\drivers\memory</string>
           </IncludeDirectories>
           <PreprocessorMacros>
             <string>USE_HAL_DRIVER</string>
