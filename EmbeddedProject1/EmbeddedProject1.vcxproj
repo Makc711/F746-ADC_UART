@@ -78,9 +78,11 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
+    <ClInclude Include="..\app\hardware\flash\flash_erase_f7.h" />
     <ClInclude Include="..\Core\Inc\main.h" />
     <ClInclude Include="..\Core\Inc\stm32f7xx_hal_conf.h" />
     <ClInclude Include="..\Core\Inc\stm32f7xx_it.h" />
+    <ClCompile Include="..\app\hardware\flash\flash_erase_f7.cpp" />
     <ClCompile Include="..\Core\Src\stm32f7xx_hal_msp.c" />
     <ClCompile Include="..\Core\Src\stm32f7xx_it.c" />
     <ClCompile Include="..\Core\Src\syscalls.c" />

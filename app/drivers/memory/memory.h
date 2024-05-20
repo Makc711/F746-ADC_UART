@@ -56,7 +56,7 @@ public:
   };
 
   explicit memory(sector_addr start_addr);
-  status read_data(data_t& full_data) const;
+  status read_data_from_flash(data_t* full_data) const;
 
 private:
   uint32_t f_start_addr;

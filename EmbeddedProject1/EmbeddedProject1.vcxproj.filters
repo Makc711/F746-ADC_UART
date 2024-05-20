@@ -468,5 +468,13 @@
     <ClInclude Include="..\app\drivers\memory\memory.h">
       <Filter>Source files\app\drivers\memory</Filter>
     </ClInclude>
+    <ClInclude Include="..\app\hardware\flash\flash_erase_f7.h">
+      <Filter>Source files\app\hardware\flash</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\app\hardware\flash\flash_erase_f7.cpp">
+      <Filter>Source files\app\hardware\flash</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

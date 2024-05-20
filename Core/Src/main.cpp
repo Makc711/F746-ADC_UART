@@ -104,7 +104,7 @@ int main(void)
 
   const memory memory(flash_rw::sector_addr::ADDR_FLASH_SECTOR_7);
   data_t full_data[k_default_val_length] = {};
-  const memory::status result = memory.read_data(*full_data);
+  const memory::status result = memory.read_data_from_flash(full_data);
   xprintf("Memory read status: %s\r", result == memory::status::READ_OK ? "from FLASH" : "DEFAULT");
 
   uint16_t u_min[adc_conv::channels_num];
