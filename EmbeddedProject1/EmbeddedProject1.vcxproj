@@ -78,11 +78,11 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ClInclude Include="..\app\hardware\flash\flash_erase_f7.h" />
+    <ClInclude Include="..\app\hardware\flash\flash_f7.h" />
     <ClInclude Include="..\Core\Inc\main.h" />
     <ClInclude Include="..\Core\Inc\stm32f7xx_hal_conf.h" />
     <ClInclude Include="..\Core\Inc\stm32f7xx_it.h" />
-    <ClCompile Include="..\app\hardware\flash\flash_erase_f7.cpp" />
+    <ClCompile Include="..\app\hardware\flash\flash_f7.cpp" />
     <ClCompile Include="..\Core\Src\stm32f7xx_hal_msp.c" />
     <ClCompile Include="..\Core\Src\stm32f7xx_it.c" />
     <ClCompile Include="..\Core\Src\syscalls.c" />
@@ -184,5 +184,10 @@
     <ClInclude Include="..\app\hardware\flash\flash_rw.h" />
     <ClCompile Include="..\app\drivers\memory\memory.cpp" />
     <ClInclude Include="..\app\drivers\memory\memory.h" />
+    <ClInclude Include="..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_crc.h" />
+    <ClInclude Include="..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_crc_ex.h" />
+    <ClInclude Include="..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_crc.h" />
+    <ClCompile Include="..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_crc.c" />
+    <ClCompile Include="..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_crc_ex.c" />
   </ItemGroup>
 </Project>

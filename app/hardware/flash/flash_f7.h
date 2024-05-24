@@ -1,10 +1,10 @@
 /**
   ******************************************************************************
-  * @file           : flash_erase_f7.h
+  * @file           : flash_f7.h
   * @author         : Rusanov M.N.
   * @version        : V1.0.0
   * @date           : 20-May-2024
-  * @brief          : Header for flash_erase_f7.cpp file.
+  * @brief          : Header for flash_f7.cpp file.
   *                   This file contains function for erase flash memory
   *
   ******************************************************************************
@@ -14,7 +14,7 @@
 
 #include "main.h"
 
-class flash_erase_f7
+class flash_f7
 {
 public:
   enum class addr
@@ -29,9 +29,15 @@ public:
     ADDR_FLASH_SECTOR_7 = static_cast<uint32_t>(0x080C0000)  /* Base address of Sector 7, 256 Kbytes */
   };
 
-  static void init_erase_struct(FLASH_EraseInitTypeDef &erase_init_struct, uint32_t address_start, uint32_t address_end);
+  static constexpr uint32_t max_end_addr = static_cast<uint32_t>(addr::ADDR_FLASH_SECTOR_7) + 256 * 1024 - 1;
+
+protected:
+  flash_f7() = default;
+  static void init_erase_struct(
+    FLASH_EraseInitTypeDef &erase_init_struct, 
+    uint32_t address_start, 
+    uint32_t address_end);
 
 private:
-  flash_erase_f7();
   static uint32_t get_sector(uint32_t address);
 };

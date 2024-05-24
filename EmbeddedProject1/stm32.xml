@@ -49,11 +49,91 @@
     <AllDependencies>
       <ProjectDependency>
         <RelativePath>..\.cproject</RelativePath>
-        <Timestamp>133603697431381124</Timestamp>
+        <Timestamp>133609568526167054</Timestamp>
       </ProjectDependency>
     </AllDependencies>
     <RootDirectory>
       <Subdirectories>
+        <VirtualDirectorySnapshot>
+          <Name>app</Name>
+          <Subdirectories>
+            <VirtualDirectorySnapshot>
+              <Name>drivers</Name>
+              <Subdirectories>
+                <VirtualDirectorySnapshot>
+                  <Name>memory</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\memory\memory.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\memory\memory.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+                <VirtualDirectorySnapshot>
+                  <Name>xprintf</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xprintf.c</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xprintf.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xuart_stream.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\drivers\xprintf\xuart_stream.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+              </Subdirectories>
+              <Files />
+            </VirtualDirectorySnapshot>
+            <VirtualDirectorySnapshot>
+              <Name>hardware</Name>
+              <Subdirectories>
+                <VirtualDirectorySnapshot>
+                  <Name>adc</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\adc_conv.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\adc_conv.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\median_filter_ekstrom.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\adc\median_filter_ekstrom.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+                <VirtualDirectorySnapshot>
+                  <Name>flash</Name>
+                  <Files>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\flash\flash_f7.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\flash\flash_f7.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\flash\flash_rw.cpp</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\app\hardware\flash\flash_rw.h</RelativePath>
+                    </VirtualFileSnapshot>
+                  </Files>
+                </VirtualDirectorySnapshot>
+              </Subdirectories>
+              <Files />
+            </VirtualDirectorySnapshot>
+          </Subdirectories>
+          <Files />
+        </VirtualDirectorySnapshot>
         <VirtualDirectorySnapshot>
           <Name>Core</Name>
           <Subdirectories>
@@ -255,6 +335,12 @@
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_cortex.h</RelativePath>
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_crc.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_crc_ex.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_def.h</RelativePath>
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
@@ -316,6 +402,9 @@
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_cortex.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_crc.h</RelativePath>
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_dma.h</RelativePath>
@@ -354,6 +443,12 @@
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_cortex.h</RelativePath>
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_crc.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_crc_ex.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_def.h</RelativePath>
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
@@ -415,6 +510,9 @@
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_cortex.h</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_crc.h</RelativePath>
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_dma.h</RelativePath>
@@ -456,6 +554,12 @@
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cortex.c</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_crc.c</RelativePath>
+                    </VirtualFileSnapshot>
+                    <VirtualFileSnapshot>
+                      <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_crc_ex.c</RelativePath>
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma.c</RelativePath>
@@ -504,80 +608,6 @@
                     </VirtualFileSnapshot>
                     <VirtualFileSnapshot>
                       <RelativePath>..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_uart_ex.c</RelativePath>
-                    </VirtualFileSnapshot>
-                  </Files>
-                </VirtualDirectorySnapshot>
-              </Subdirectories>
-              <Files />
-            </VirtualDirectorySnapshot>
-          </Subdirectories>
-          <Files />
-        </VirtualDirectorySnapshot>
-        <VirtualDirectorySnapshot>
-          <Name>app</Name>
-          <Subdirectories>
-            <VirtualDirectorySnapshot>
-              <Name>drivers</Name>
-              <Subdirectories>
-                <VirtualDirectorySnapshot>
-                  <Name>memory</Name>
-                  <Files>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\drivers\memory\memory.cpp</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\drivers\memory\memory.h</RelativePath>
-                    </VirtualFileSnapshot>
-                  </Files>
-                </VirtualDirectorySnapshot>
-                <VirtualDirectorySnapshot>
-                  <Name>xprintf</Name>
-                  <Files>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\drivers\xprintf\xprintf.c</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\drivers\xprintf\xprintf.h</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\drivers\xprintf\xuart_stream.cpp</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\drivers\xprintf\xuart_stream.h</RelativePath>
-                    </VirtualFileSnapshot>
-                  </Files>
-                </VirtualDirectorySnapshot>
-              </Subdirectories>
-              <Files />
-            </VirtualDirectorySnapshot>
-            <VirtualDirectorySnapshot>
-              <Name>hardware</Name>
-              <Subdirectories>
-                <VirtualDirectorySnapshot>
-                  <Name>adc</Name>
-                  <Files>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\hardware\adc\adc_conv.cpp</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\hardware\adc\adc_conv.h</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\hardware\adc\median_filter_ekstrom.cpp</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\hardware\adc\median_filter_ekstrom.h</RelativePath>
-                    </VirtualFileSnapshot>
-                  </Files>
-                </VirtualDirectorySnapshot>
-                <VirtualDirectorySnapshot>
-                  <Name>flash</Name>
-                  <Files>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\hardware\flash\flash_rw.cpp</RelativePath>
-                    </VirtualFileSnapshot>
-                    <VirtualFileSnapshot>
-                      <RelativePath>..\app\hardware\flash\flash_rw.h</RelativePath>
                     </VirtualFileSnapshot>
                   </Files>
                 </VirtualDirectorySnapshot>

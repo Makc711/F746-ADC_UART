@@ -1,13 +1,11 @@
 /**
   ******************************************************************************
-  * @file           : flash_erase_f7.cpp
+  * @file           : flash_f7.cpp
   * @author         : Rusanov M.N.
   ******************************************************************************
   */
 
-#include "flash_erase_f7.h"
-
-flash_erase_f7::flash_erase_f7() = default;
+#include "flash_f7.h"
 
 /**
   * @brief  Get the structure for sector erase.
@@ -17,7 +15,7 @@ flash_erase_f7::flash_erase_f7() = default;
   * @erase_init_struct[out]  A reference to the structure to erase, which will
   *                          be initialized here.
   */
-void flash_erase_f7::init_erase_struct(FLASH_EraseInitTypeDef &erase_init_struct, const uint32_t address_start, const uint32_t address_end)
+void flash_f7::init_erase_struct(FLASH_EraseInitTypeDef &erase_init_struct, const uint32_t address_start, const uint32_t address_end)
 {
   const uint32_t first_sector  = get_sector(address_start);
   const uint32_t nb_of_sectors = get_sector(address_end) - first_sector + 1;
@@ -33,7 +31,7 @@ void flash_erase_f7::init_erase_struct(FLASH_EraseInitTypeDef &erase_init_struct
   * @param  address - destination address
   * @retval The sector of a given address
   */
-uint32_t flash_erase_f7::get_sector(const uint32_t address)
+uint32_t flash_f7::get_sector(const uint32_t address)
 {
   uint32_t sector;
 

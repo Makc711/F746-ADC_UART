@@ -16,13 +16,15 @@
 #include "main.h"
 #if USE_FLASH
 #include "flash_rw.h"
+using memory_t = flash_rw;
 #else
 #include "eeprom_rw.h"
+using memory_t = eeprom_rw;
 #endif
 
 struct data_t
 {
-  enum class idx
+  enum class idx : uint16_t
   {
     U0_MIN,
     U0_MAX,
@@ -42,11 +44,7 @@ constexpr data_t k_default_val[] = {
 };
 constexpr auto k_default_val_length = sizeof(k_default_val) / sizeof(data_t);
 
-#if USE_FLASH
-class memory : public flash_rw
-#else
-class memory : public eeprom_rw
-#endif
+class memory : public memory_t
 {
 public:
   enum class status
@@ -55,11 +53,12 @@ public:
     GET_DEFAULT
   };
 
-  explicit memory(sector_addr start_addr);
+  explicit memory(addr start_addr, CRC_HandleTypeDef& hcrc);
   status read_data_from_flash(data_t* full_data) const;
 
 private:
   uint32_t f_start_addr;
+  CRC_HandleTypeDef &f_hcrc;
 };
 
 
