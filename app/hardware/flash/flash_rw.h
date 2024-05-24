@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file           : flash_rw.h
   * @author         : Rusanov M.N.
-  * @version        : V1.0.0
-  * @date           : 17-May-2024
+  * @version        : V1.0.1
+  * @date           : 24-May-2024
   * @brief          : Header for flash_rw.cpp file.
   *                   This file contains functions for working with flash memory
   *

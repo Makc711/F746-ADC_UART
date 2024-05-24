@@ -32,7 +32,7 @@ public:
   static constexpr uint32_t max_end_addr = static_cast<uint32_t>(addr::ADDR_FLASH_SECTOR_7) + 256 * 1024 - 1;
 
 protected:
-  flash_f7() = default;
+  flash_f7();
   static void init_erase_struct(
     FLASH_EraseInitTypeDef &erase_init_struct, 
     uint32_t address_start, 

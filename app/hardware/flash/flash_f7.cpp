@@ -7,6 +7,8 @@
 
 #include "flash_f7.h"
 
+flash_f7::flash_f7() = default;
+
 /**
   * @brief  Get the structure for sector erase.
   * @address_start[in]  sector start address

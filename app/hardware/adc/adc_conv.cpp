@@ -98,9 +98,9 @@ void adc_conv::adc_conv_cplt_callback(ADC_HandleTypeDef* hadc)
       {
         f_adc_result_data[i] = static_cast<uint16_t>(f_adc_sum_data[i] / measurements_num);
         f_adc_sum_data[i] = 0;
-#if USE_MEDIAN_FILTER
+  #if USE_MEDIAN_FILTER
         f_adc_result_data[i] = f_filter[i].filter(f_adc_result_data[i]);
-#endif
+  #endif
       }
 
       f_adc_measurements_cnt = 0;
