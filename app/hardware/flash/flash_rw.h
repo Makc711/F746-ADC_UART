@@ -26,7 +26,7 @@ class flash_rw : public flash_t
 protected:
   flash_rw();
   static void erase(uint32_t address_start, uint32_t address_end); // Use before write!
-  static void write_word(uint32_t address, uint32_t word);
+  static void write_only_one_word(uint32_t address, uint32_t word);
   [[nodiscard]] static uint32_t read_word(uint32_t address);
   static void write_arr_to_flash(uint32_t address, const uint32_t* arr, size_t size_bytes);
   static void read_arr_from_flash(uint32_t address, uint32_t* arr, size_t size_bytes);
@@ -34,6 +34,7 @@ protected:
   static size_t read_str_from_flash(uint32_t address, char* str, size_t max_size);
 
 private:
+  static void write_word(uint32_t address, uint32_t word);
   static void check_word(uint32_t address, uint32_t word);
 };
 

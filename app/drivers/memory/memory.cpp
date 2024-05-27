@@ -23,11 +23,11 @@ memory::status memory::read_data_from_flash(data_t* full_data) const
       crc_read != crc_calc)
   {
     const uint32_t end_addr = f_start_addr + sizeof(k_default_val);
+#if USE_FLASH
     erase(f_start_addr, end_addr);
+#endif
     write_arr_to_flash(f_start_addr, reinterpret_cast<const uint32_t*>(k_default_val), sizeof(k_default_val));
-    HAL_FLASH_Unlock();
-    write_word(f_start_addr + sizeof(k_default_val), crc_calc);
-    HAL_FLASH_Lock();
+    write_only_one_word(f_start_addr + sizeof(k_default_val), crc_calc);
     std::copy(std::begin(k_default_val), std::end(k_default_val), full_data);
     return status::GET_DEFAULT;
   }

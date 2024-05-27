@@ -49,6 +49,13 @@ void flash_rw::write_word(const uint32_t address, const uint32_t word)
   }
 }
 
+void flash_rw::write_only_one_word(const uint32_t address, const uint32_t word)
+{
+  HAL_FLASH_Unlock();
+  write_word(address, word);
+  HAL_FLASH_Lock();
+}
+
 uint32_t flash_rw::read_word(const uint32_t address)
 {
   return *reinterpret_cast<__IO uint32_t*>(address);  // NOLINT(performance-no-int-to-ptr)
