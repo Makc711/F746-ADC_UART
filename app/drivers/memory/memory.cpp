@@ -22,8 +22,8 @@ memory::status memory::read_data_from_flash(data_t* full_data) const
                                                    sizeof(k_default_val) / sizeof(uint32_t)); 
       crc_read != crc_calc)
   {
-    const uint32_t end_addr = f_start_addr + sizeof(k_default_val);
 #if USE_FLASH
+    const uint32_t end_addr = f_start_addr + sizeof(k_default_val);
     erase(f_start_addr, end_addr);
 #endif
     write_arr_to_flash(f_start_addr, reinterpret_cast<const uint32_t*>(k_default_val), sizeof(k_default_val));
